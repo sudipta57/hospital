@@ -1,0 +1,97 @@
+const Footer = () => {
+  return (
+    <>
+      <footer className="bg-[#002B9A] text-white py-8">
+        <div className="border-b pb-20 container mx-auto px-4 grid grid-cols-1 font-poppins md:grid-cols-4 gap-8">
+          {/* Column 1 */}
+          <div>
+            <h2 className="text-2xl font-bold font-yeseva">MEDDICAL</h2>
+            <p className="mt-2">
+              Leading the Way in Medical Excellence, Trusted Care.
+            </p>
+          </div>
+
+          {/* Column 2 */}
+          <div>
+            <h3 className="text-lg font-semibold">Important Links</h3>
+            <ul className="mt-2 space-y-2 text-[#FFFFFF]">
+              <li>
+                <a href="#" className="hover:underline">
+                  Appointment
+                </a>
+              </li>
+              <li>
+                <a href="#" className="hover:underline">
+                  Doctors
+                </a>
+              </li>
+              <li>
+                <a href="#" className="hover:underline">
+                  Services
+                </a>
+              </li>
+              <li>
+                <a href="#" className="hover:underline">
+                  About Us
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          {/* Column 3 */}
+          <div>
+            <h3 className="text-lg font-semibold">Contact Us</h3>
+            <ul className="mt-2 space-y-2">
+              <li>Call: (237) 681-812-255</li>
+              <li>
+                Email:
+                <a href="" className="hover:underline">
+                  medicare@gmail.com
+                </a>
+              </li>
+              <li>Address: 110025-New Delhi, Noida</li>
+              <li>Work Hour: 09:00 - 20:00 Everyday</li>
+            </ul>
+          </div>
+
+          {/* Column 4 */}
+          <div>
+            <h3 className="text-lg font-semibold">Newsletter</h3>
+            <form className="mt-2 flex">
+              <input
+                type="email"
+                placeholder="Enter your email address"
+                className="w-full px-4 py-2 rounded-l-md focus:outline-none"
+              />
+              <button type="submit" className="bg-white px-4 py-2 rounded-r-md">
+                <img src="/landing/submit.png" alt="SubmitImg" />
+              </button>
+            </form>
+          </div>
+        </div>
+        <div className="flex justify-between items-center container mx-auto px-4 mt-8">
+          <p>© 2024 Hospital’s name All Rights Reserved by Secwebxperts</p>
+          <div className="flex justify-between flex-wrap space-y-2">
+            <img
+              src="/landing/linkdn.png"
+              alt="linkdn"
+              className="mx-2 cursor-pointer"
+            />
+            <img
+              src="/landing/facebook.png"
+              alt="face"
+              className="mx-2 cursor-pointer"
+            />
+            <img
+              src="/landing/insta.png"
+              alt="insta"
+              className="mx-2 cursor-pointer"
+            />
+          </div>
+        </div>
+      </footer>
+    </>
+  );
+};
+
+export default Footer;
