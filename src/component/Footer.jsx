@@ -70,7 +70,7 @@ const Footer = () => {
           </div>
         </div>
         <div className="flex justify-between items-center container mx-auto px-4 mt-8">
-          <p>© 2024 Hospital’s name All Rights Reserved by Secwebxperts</p>
+          <p>Copyright@OMEGA | developed by SECWEBXPERTS PVT. LTD.</p>
           <div className="flex justify-between flex-wrap space-y-2">
             <img
               src="/landing/linkdn.png"
