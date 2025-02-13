@@ -3,21 +3,64 @@ import { Quote, Facebook, Linkedin, Instagram, Eye, Heart } from "lucide-react";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 export default function Contact() {
+  const contactInfo = [
+    {
+      icon: "/about/contact-icon-1.png", // Replace with actual icon component if needed
+      title: "EMERGENCY",
+      content: (
+        <>
+          (237) 681-812-XXX <br /> (237) 666-331-XXX
+        </>
+      ),
+      bgColor: "bg-blue-100",
+    },
+    {
+      icon: "/about/contact-icon-2.png", // Replace with actual icon component if needed
+
+      title: "LOCATION",
+      content: "110025-New Delhi, Noida, India",
+      bgColor: "bg-blue-900 text-white",
+      active: true,
+    },
+    {
+      icon: "/about/contact-icon-3.png", // Replace with actual icon component if needed
+
+      title: "EMAIL",
+      content: (
+        <>
+          medicare@gmail.com <br /> myebstudios@gmail.com
+        </>
+      ),
+      bgColor: "bg-blue-100",
+    },
+    {
+      icon: "/about/contact-icon-4.png", // Replace with actual icon component if needed
+
+      title: "WORKING HOURS",
+      content: (
+        <>
+          Mon-Sat 09:00-20:00 <br /> Sunday Emergency only
+        </>
+      ),
+      bgColor: "bg-blue-100",
+    },
+  ];
   return (
     <div>
       {/* banner */}
-      <div className=" relative">
+      <div className="pt-[140px] relative h-auto">
         {/* Background Image */}
-        <img src="/about/bg1.png" alt="bg1" className="w-full h-auto" />
+        <img src="/contact.png" alt="bg1" className="w-full h-auto" />
 
         {/* Text Overlay */}
-        <div className="absolute inset-0 flex items-center left-0 px-6">
-          <div className="text-left text-[#1F2B6C]">
-            <p className="md:text-[20px]">Home / Contact</p>
-            <h2 className="text-3xl md:text-[55px] font-[700]">Our Contact</h2>
+        <div className="absolute inset-0 flex items-center left-6 px-6">
+          <div className="text-left font-poppins text-[#1F2B6C]">
+            <p className="md:text-[20px] mb-4">Home / Contact</p>
+            <h2 className="text-3xl md:text-[55px]  font-[700]">Our Contact</h2>
           </div>
         </div>
       </div>
+
       {/* mapp section */}
       <div className="w-full max-w-full mt-4">
         <div className=" rounded-lg overflow-hidden shadow-lg">
@@ -40,107 +83,89 @@ export default function Contact() {
           backgroundImage: "url('/about/bg5.png')", // Replace with your image URL
         }}
       >
-        <div className=" rounded-lg  p-2 w-full max-w-5xl">
-          <h1 className="text-2xl font-bold text-left text-[#159EEC] mb-6">
+        <div className=" rounded-lg font-poppins p-2 w-full max-w-5xl">
+          <h1 className="text-[18px] font-[700] text-left text-[#159EEC] mb-2">
             Get in Touch
           </h1>
-          <h1 className="text-left text-2xl font-bold mb-4">Contact Us</h1>
+          <h1 className="text-left text-[#002B9A] font-[600] mb-4 text-[32px]">
+            Contact Us
+          </h1>
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-            {/* Left Section */}
-            <div className="bg-[#1F2B6C] text-white p-6 rounded-lg shadow-lg w-full max-w-md">
-              <form className="space-y-4">
-                {/* Name and Email */}
-                <div className="grid grid-cols-2 gap-4">
-                  <div>
-                    <label htmlFor="name" className="block text-sm font-medium">
-                      Name
-                    </label>
+            {/* left side */}
+            <div className="bg-[#1F2B6C] text-white rounded-2xl shadow-lg w-full max-w-lg">
+              <form className="space-y-0 text-[#FCFEFE] font-poppins">
+                {/* Name & Email Section */}
+                <div className="grid grid-cols-2 border-b border-white">
+                  <div className="p-1">
                     <input
                       type="text"
                       id="name"
-                      className="w-full mt-1 p-2 bg-[#1F2B6C] border border-white  rounded focus:outline-none focus:ring focus:ring-blue-400"
+                      className="w-full mt-1 p-2 bg-[#1F2B6C] outline-none text-white placeholder-[#FCFEFE]"
+                      placeholder="Name"
                     />
                   </div>
-                  <div>
-                    <label
-                      htmlFor="email"
-                      className="block text-sm font-medium"
-                    >
-                      Email
-                    </label>
+                  <div className="p-1 border-l border-white">
+                    
                     <input
                       type="email"
                       id="email"
-                      className="w-full mt-1 p-2 bg-[#1F2B6C] border border-white  rounded focus:outline-none focus:ring focus:ring-blue-400"
+                      className="w-full mt-1 p-2 bg-[#1F2B6C] outline-none text-white placeholder-[#FCFEFE]"
+                      placeholder="Email"
                     />
                   </div>
                 </div>
-                {/* Subject */}
-                <div>
-                  <label
-                    htmlFor="subject"
-                    className="block text-sm font-medium"
-                  >
-                    Subject
-                  </label>
+
+                {/* Subject Section */}
+                <div className="border-b border-white p-3">
+                 
                   <input
                     type="text"
                     id="subject"
-                    className="w-full mt-1 p-2 bg-[#1F2B6C] border border-white rounded focus:outline-none focus:ring focus:ring-blue-400"
+                    className="w-full mt-1 p-2 bg-[#1F2B6C] outline-none text-white placeholder-[#FCFEFE]"
+                    placeholder="Subject"
                   />
                 </div>
-                {/* Message */}
-                <div>
-                  <label
-                    htmlFor="message"
-                    className="block text-sm font-medium"
-                  >
-                    Message
-                  </label>
+
+                {/* Message Section */}
+                <div className="p-3">
+                  
                   <textarea
                     id="message"
-                    rows="4"
-                    className="w-full mt-1 p-2 bg-[#1F2B6C]  rounded focus:outline-none focus:ring focus:ring-blue-400"
-                    placeholder="Write your message here"
+                    rows="6"
+                    className="w-full mt-1 p-2 bg-[#1F2B6C] outline-none text-white placeholder-[#FCFEFE]"
+                    placeholder="Message"
                   ></textarea>
                 </div>
-                {/* Submit Button */}
+
+                {/* Submit Button with Light Blue Background */}
                 <button
                   type="submit"
-                  className="w-full bg-[#BFD2F8] text-white py-2 rounded hover:bg-blue-500 transition"
+                  className="w-full h-[50px] bg-[#BFD2F8] text-[#1F2B6C] p-2 rounded-b-md pb-0 font-[500] uppercase tracking-wide hover:bg-[#A5C4F0] transition duration-300"
                 >
                   Submit
                 </button>
               </form>
             </div>
 
-            {/* Right Section */}
+            {/* righ section */}
             <div className="grid grid-cols-2 gap-4">
-              <div className="bg-[#BFD2F8] p-4 rounded shadow-md">
-                <img src="/about/contact-icon-1.png" alt="contactIcon" />
-                <h3 className="text-[#1F2B6C] font-bold text-lg">Emergency</h3>
-                <p className="text-[#1F2B6C]">(237) 681-812-255</p>
-                <p className="text-[#1F2B6C]">(237) 666-331-894</p>
-              </div>
-              <div className="bg-blue-900 text-white p-4 rounded shadow-md">
-                <img src="/about/contact-icon-2.png" alt="contactIcon" />
-                <h3 className="font-bold text-lg">Location</h3>
-                <p>110025-New Delhi, Noida, India</p>
-              </div>
-              <div className="bg-[#BFD2F8] p-4 rounded shadow-md">
-                <img src="/about/contact-icon-3.png" alt="contactIcon" />
-                <h3 className="text-[#1F2B6C] font-bold text-lg">Email</h3>
-                <p className="text-[#1F2B6C]">medicare@gmail.com</p>
-                <p className="text-[#1F2B6C]">myebstudios@gmail.com</p>
-              </div>
-              <div className="bg-[#BFD2F8] text-white p-4 rounded shadow-md">
-                <img src="/about/contact-icon-4.png" alt="contactIcon" />
-                <h3 className="text-[#1F2B6C] font-bold text-lg">
-                  Working Hours
-                </h3>
-                <p className="text-[#1F2B6C]">Mon-Sat 09:00-20:00</p>
-                <p className="text-[#1F2B6C]">Sunday Emergency only</p>
-              </div>
+              {contactInfo.map((info, index) => (
+                <div
+                  key={index}
+                  className="p-4 rounded text-[16px] shadow-md font-[400] bg-[#BFD2F8] text-[#1F2B6C] font-poppins group transition-all duration-200 hover:bg-[#1F2B6C] hover:text-[#BFD2F8]"
+                >
+                  <img
+                    src={info.icon}
+                    alt="contactIcon"
+                    className="w-10 h-10 transition-all duration-300 filter brightness-[0] invert-[0] group-hover:brightness-50 group-hover:invert"
+                  />
+
+                  <h3 className="font-[600] text-[22px] transition-all duration-100 mt-2">
+                    {info.title}
+                  </h3>
+                  {info.content}
+                </div>
+              ))}
             </div>
           </div>
         </div>
@@ -222,16 +247,16 @@ const NewsSlider = () => {
     },
   ];
   return (
-    <div className="mt-64 md:mt-6 py-16 bg-[#F2F2F2] md:block hidden">
-      <div className="text-center mb-12">
+    <div className="mt-4  f py-12 bg-[#F2F2F2] md:block hidden">
+      <div className="text-center font-poppins mb-10">
         <h2 className="text-[#159EEC] text-[18px] font-[700] mb-2 uppercase">
           Better information, Better health
         </h2>
         <h1 className="text-4xl font-bold text-blue-900">News </h1>
       </div>
-      <div className="relative pb-36">
+      <div className="relative pb-40 font-poppins">
         <img src="/about/bg4.png" alt="bg3" className="w-full h-auto" />
-        <div className="max-w-7xl mx-auto absolute top-0  left-0 right-0 md:top-[100px]">
+        <div className="max-w-6xl mx-auto absolute top-0 mb-6 left-0 right-0 md:top-[100px]">
           {/* <Slider {...settings}> */}
           <div className="grid grid-cols-1 md:grid-cols-2">
             {newsArticles.map((article) => (

@@ -61,7 +61,7 @@ const contactInfo = [
     title: "EMERGENCY",
     content: (
       <>
-        (237) 681-812-255 <br /> (237) 666-331-894
+        (237) 681-812-XXX <br /> (237) 666-331-XXX
       </>
     ),
     bgColor: "bg-blue-100",
@@ -91,7 +91,7 @@ const contactInfo = [
     title: "WORKING HOURS",
     content: (
       <>
-        Mon-Sat 09:00–20:00 <br /> Sunday Emergency only
+        Mon-Sat 09:00-20:00 <br /> Sunday Emergency only
       </>
     ),
     bgColor: "bg-blue-100",
@@ -100,16 +100,16 @@ const contactInfo = [
 const OurNews = () => {
   const navigate = useNavigate();
   return (
-    <div>
+    <div className="pt-[140px] bg-white">
       {/* banner */}
       <div className=" relative">
         {/* Background Image */}
         <img src="/news/bg-1.png" alt="bg1" className="w-full h-auto" />
 
         {/* Text Overlay */}
-        <div className="absolute inset-0 flex items-center left-0 px-6">
-          <div className="text-left text-[#1F2B6C]">
-            <p className="md:text-[20px]">Home / News</p>
+        <div className="absolute font-poppins inset-0 flex items-center left-0 px-6">
+        <div className="text-left text-[#1F2B6C]">
+        <p className="md:text-[20px] mb-4">Home / News</p>
             <h2 className="text-3xl md:text-[55px] font-[700]">Blog Posts</h2>
           </div>
         </div>
@@ -118,8 +118,8 @@ const OurNews = () => {
       {/* blog posts */}
 
       <div className="bg-gray-50 min-h-screen py-10">
-        <div className="container mx-auto px-4 lg:px-16">
-          <div className="grid grid-cols-1 lg:grid-cols-4 gap-8">
+        <div className="container mx-auto px-2">
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
             {/* Sidebar */}
             <div className="lg:col-span-1 order-1 lg:order-2">
               {/* Recent Posts */}
@@ -139,18 +139,18 @@ const OurNews = () => {
                 </form>
               </div>
 
-              <div className="bg-white shadow-md rounded-lg p-6 mb-8">
+              <div className="bg-[#FCFEFE] border p-6 mb-8">
                 <h3 className="text-lg font-semibold text-gray-800 mb-6 border-b-2 border-gray-200 pb-2">
                   Recent Posts
                 </h3>
-                <div className="space-y-6">
+                <div>
                   {posts.map((post) => (
                     <div
                       key={post.id}
-                      className="flex items-center gap-4 hover:bg-gray-100 p-3 rounded-lg transition"
+                      className="flex items-center gap-2 hover:bg-gray-100 p-3 rounded-lg transition"
                     >
                       {/* Thumbnail */}
-                      <div className="w-16 h-16 flex-shrink-0">
+                      <div className="w-[60px] h-[60px] flex-shrink-0">
                         <img
                           src={post.thumbnail}
                           alt={post.title}
@@ -158,13 +158,14 @@ const OurNews = () => {
                         />
                       </div>
                       {/* Content */}
-                      <div>
-                        <h4 className="text-sm text-gray-800 font-semibold line-clamp-2">
-                          {post.title}
-                        </h4>
-                        <span className="text-xs text-gray-500">
+                      <div className="font-[400] font-poppins ">
+                      <span className="text-xs text-[#159EEC]">
                           {post.date}
                         </span>
+                        <h4 className="text-[12px] text-[#212124] font-[400] line-clamp-2">
+                          {post.title}
+                        </h4>
+                        
                       </div>
                     </div>
                   ))}
@@ -172,8 +173,8 @@ const OurNews = () => {
               </div>
 
               {/* Categories */}
-              <div className="bg-white shadow-md rounded-lg p-6">
-                <h3 className="text-lg font-semibold text-gray-800 mb-6 border-b-2 border-gray-200 pb-2">
+              <div className="bg-[#FCFEFE] font-poppins border p-6">
+                <h3 className="text-lg font-[500] text-[#1F2B6C] mb-6 border-b-2 border-gray-200 pb-2">
                   Categories
                 </h3>
                 <ul className="space-y-4">
@@ -206,11 +207,11 @@ const OurNews = () => {
             </div>
 
             {/* Blog Posts */}
-            <div className="col-span-1 lg:col-span-3 order-2 lg:order-1">
+            <div className="col-span-1 font-poppins lg:col-span-3 order-2 lg:order-1">
               {posts.map((post) => (
                 <div
                   key={post.id}
-                  className="bg-white shadow-md rounded-lg mb-8 overflow-hidden"
+                  className=" mb-8 overflow-hidden"
                 >
                   <img
                     src={post.image}
@@ -236,25 +237,25 @@ const OurNews = () => {
                         <p className="ml-2">{post.likes}</p>
                       </span>
                     </div>
-                    <h2 className="text-xl font-semibold text-gray-800 mb-3">
+                    <h2 className="text-[30px] font-[400] leading-[45px] text-[#1F2B6C] mb-3">
                       {post.title}
                     </h2>
                     <p className="text-gray-600 mb-4">{post.description}</p>
 
                     <button
-                      className="inline-flex items-center text-blue-600 font-medium bg-[#BFD2F8] p-3 rounded-full"
+                      className="inline-flex items-center text-[#1F2B6C] font-[500] bg-[#BFD2F8] p-3 rounded-full"
                       onClick={() => {
                         navigate("/single-news");
                       }}
                     >
-                      Read More &gt;
+                      Read More &rarr;
                     </button>
                   </div>
                 </div>
               ))}
               <div className="flex justify-between items-center text-gray-600 mt-8">
-                <button className="text-blue-600 font-medium">
-                  Previous Page
+                <button className="text-[#159EEC] font-[400]">
+                &#8592; Previous Page
                 </button>
                 <div className="flex items-center space-x-2">
                   <button className="px-3 py-1 bg-blue-600 text-white rounded-md">
@@ -265,7 +266,8 @@ const OurNews = () => {
                   <button className="px-3 py-1 text-blue-600">4</button>
                   <button className="px-3 py-1 text-blue-600">5</button>
                 </div>
-                <button className="text-blue-600 font-medium">Next Page</button>
+                <button className="text-[#159EEC] font-[400]">  Next Page &#8594;
+                </button>
               </div>
             </div>
           </div>
@@ -273,35 +275,33 @@ const OurNews = () => {
       </div>
 
       {/*contact us  */}
-      <section className="py-16 bg-[url('/about/bg5.png')] bg-no-repeat bg-cover bg-center md:mt-5 ">
+      <section className="py-16 bg-[url('/about/bg5.png')] bg-no-repeat bg-cover bg-center">
         <div className="text-center mb-12">
-          <h2 className="text-blue-500 text-[18px] font-bold uppercase mb-2">
+          <h2 className="text-[#159EEC] text-[18px] font-[700] uppercase mb-2">
             Get in Touch
           </h2>
-          <h1 className="text-blue-900 text-4xl font-bold">Contact</h1>
+          <h1 className="text-[#002B9A] font-poppins text-4xl font-[600]">
+            Contact
+          </h1>
         </div>
 
         <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-6 px-4">
           {contactInfo.map((info, index) => (
             <div
               key={index}
-              className={`p-6 rounded-lg shadow-lg ${info.bgColor}`}
+              className="p-6 rounded-lg shadow-lg transition-all duration-300 bg-[#BFD2F8] text-[#1F2B6C] hover:bg-[#1F2B6C] hover:text-[#BFD2F8] group"
             >
-              <div className="mb-4">
-                <img src={info.icon} />
+              <div className="mb-4 flex">
+                <img
+                  src={info.icon}
+                  alt={info.title}
+                  className="w-10 h-10 transition-all duration-300 filter brightness-[0] invert-[0] group-hover:brightness-50 group-hover:invert"
+                />
               </div>
-              <h3
-                className={`text-blue-900 font-semibold text-xl mb-2 ${
-                  info.active ? " text-white" : ""
-                }`}
-              >
+              <h3 className="font-[600] text-xl mb-2 font-poppins transition-all duration-300 group-hover:text-[#BFD2F8]">
                 {info.title}
               </h3>
-              <p
-                className={` text-blue-700 text-lg ${
-                  info.active ? " text-white" : ""
-                }`}
-              >
+              <p className="text-lg font-poppins transition-all duration-300 group-hover:text-[#BFD2F8]">
                 {info.content}
               </p>
             </div>

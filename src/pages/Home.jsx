@@ -1,9 +1,9 @@
 import { FaCalendarAlt, FaClock } from "react-icons/fa";
 const Home = () => {
   return (
-    <div>
+    <div className="bg-white pt-[140px]">
       {/* banner section */}
-      <div className="flex  md:pt-0 md:items-center bg-[url('/landing/bg_banner.png')] h-[150vh] bg-cover bg-center">
+      <div className="flex md:pt-0 md:items-center bg-[url('/landing/bg_banner.png')] h-[864px] bg-cover bg-center ">
         <div className="max-w-3xl px-6 md:px-10 text-center md:text-left w-full">
           <h1 className="text-[#002B9A] font-poppins text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold max-w-xl">
             Your Partner in Health and Wellness
@@ -12,137 +12,138 @@ const Home = () => {
             We are committed to providing you with the best medical and
             healthcare services to help you live healthier and happier
           </p>
-          <button className="bg-[#3A40DFEE] font-poppins text-white px-8 py-3 rounded-2xl mt-10 text-lg sm:text-xl">
-            BOOK AN APPOINTMENT
+          <button className="bg-[#3A40DF] font-poppins text-white px-8 py-3 rounded-2xl mt-10 text-lg sm:text-xl">
+            BOOK AN APPOINTMENT &gt;
           </button>
         </div>
       </div>
 
       {/* Our Values Section */}
-      <div className="max-w-[1400px] bg-[#F2F2F2] mx-auto p-6 text-center relative mt-4 mb-6">
-        {/* Title */}
-        <h2 className="text-3xl font-semibold font-poppins text-blue-800 mb-8">
-          Our Values
-        </h2>
+      <div className="flex justify-center items-center bg-gray-100 py-10 mt-4 mt-4">
+        <div className="bg-[#F2F2F2] max-w-[1600px] w-full text-center relative mx-auto flex flex-col items-center px-4">
+          <h2 className="text-3xl font-semibold font-poppins text-[#002B9AC2] mb-12">
+            Our Values
+          </h2>
 
-        {/* Centered Background Shield */}
-        <div
-          className="absolute inset-0 flex justify-center items-center z-0"
-          style={{
-            backgroundImage: "url('')",
-            backgroundSize: "cover",
-            backgroundPosition: "center",
-          }}
-        />
-
-        {/* Grid container */}
-        <div className="relative grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 justify-items-center">
-          {/* Top-left Card - Respect */}
-          <div className="w-full max-w-xs bg-white font-poppins rounded-lg shadow-md text-left transform sm:mt-20 sm:mr-[-100px] md:mt-20 md:mr-[-100px]">
-            <div className="p-2 bg-[#59A0F46B] text-[#081D54] flex items-center justify-center text-center rounded-t-lg mt-7">
-              <img
-                src="/valueSection/respect.png"
-                alt="Respect Icon"
-                className="w-6 h-6 mr-2"
-              />
-              <h3 className="font-semibold">Respect</h3>
-            </div>
-            <div className="p-6">
-              <p className="text-gray-600 text-sm">
-                We treat all individuals with respect and dignity. We believe
-                every person deserves to be treated with compassion and
-                kindness.
-              </p>
-            </div>
-          </div>
-
-          {/* Top-middle Card - Excellence */}
-          <div className="w-full max-w-xs bg-white font-poppins rounded-lg shadow-md text-left transform sm:mt-7 sm:mb-10 sm:mt-12 md:mt-7 md:mb-10 md:mt-12">
-            <div className="p-2 bg-[#59A0F46B] font-poppins text-[#081D54] flex items-center justify-center text-center rounded-t-lg mt-7">
-              <img
-                src="/valueSection/respect.png"
-                alt="Excellence Icon"
-                className="w-6 h-6 mr-2"
-              />
-              <h3 className="font-semibold">Excellence</h3>
-            </div>
-            <div className="p-6">
-              <p className="text-gray-600 text-sm">
-                We are committed to providing excellent care and services to our
-                patients.
-              </p>
-            </div>
-          </div>
-
-          {/* Top-right Card - Teamwork */}
-          <div className="w-full max-w-xs bg-white font-poppins rounded-lg shadow-md text-left transform sm:mt-20 sm:ml-[-100px] md:mt-20 md:ml-[-100px]">
-            <div className="p-2 bg-[#59A0F46B] font-poppins text-[#081D54] flex items-center justify-center text-center rounded-t-lg mt-7">
-              <img
-                src="/valueSection/teamwork.png"
-                alt="Teamwork Icon"
-                className="w-6 h-6 mr-2"
-              />
-              <h3 className="font-semibold">Teamwork</h3>
-            </div>
-            <div className="p-6">
-              <p className="text-gray-600 text-sm">
-                We believe in working collaboratively with our team members and
-                other healthcare providers to provide effective care to our
-                patients.
-              </p>
-            </div>
-          </div>
-
-          {/* Bottom Row */}
-          {/* Bottom-left Card - Compassion */}
-          <div className="w-full max-w-xs bg-white font-poppins rounded-lg shadow-md text-left transform sm:translate-y-8 sm:mr-[-200px] md:translate-y-8 md:mr-[-200px]">
-            <div className="p-2 bg-[#59A0F46B] font-poppins text-[#081D54] flex items-center justify-center text-center rounded-t-lg mt-7">
-              <img
-                src="/valueSection/compassion.png"
-                alt="Compassion Icon"
-                className="w-6 h-6 mr-2"
-              />
-              <h3 className="font-semibold">Compassion</h3>
-            </div>
-            <div className="p-6">
-              <p className="text-gray-600 text-sm">
-                We strive to create a welcoming and supportive environment that
-                puts our patients at ease.
-              </p>
-            </div>
-          </div>
-
-          {/* Center Shield */}
+          {/* Centered Background Shield */}
           <div
-            className="relative flex justify-center items-center mt-[-4px] sm:mt-[-2px] md:mt-[-4px]"
-            style={{ width: "120px", height: "120px" }}
-          >
-            <div
-              style={{
-                backgroundImage: "url('/valueSection/health.png')",
-                backgroundSize: "contain",
-                backgroundPosition: "center",
-                backgroundRepeat: "no-repeat",
-              }}
-              className="flex justify-center items-center w-full h-full"
-            ></div>
-          </div>
+            className="absolute inset-0 flex justify-center items-center z-0"
+            style={{
+              backgroundImage: "url('')",
+              backgroundSize: "cover",
+              backgroundPosition: "center",
+            }}
+          />
 
-          {/* Bottom-right Card - Integrity */}
-          <div className="w-full max-w-xs bg-white font-poppins rounded-lg shadow-md text-left transform sm:translate-y-8 sm:ml-[-200px] md:translate-y-8 md:ml-[-200px]">
-            <div className="p-2 bg-[#59A0F46B] font-poppins text-[#081D54] flex items-center justify-center text-center rounded-t-lg mt-7">
-              <img
-                src="/valueSection/integrity.png"
-                alt="Integrity Icon"
-                className="w-6 h-6 mr-2"
-              />
-              <h3 className="font-semibold">Integrity</h3>
+          {/* Grid container */}
+          <div className="relative grid grid-cols-1 font-poppins sm:grid-cols-2  md:grid-cols-3 gap-x-8 gap-y-10 justify-items-center mb-8">
+            {/* Top-left Card - Respect */}
+            <div className="w-full max-w-xs bg-[#F2F2F2F2] font-poppins rounded-lg shadow-md text-left mt-10">
+              <div className="p-2 bg-[#59A0F46B] text-[#081D54] flex items-center justify-center text-center rounded-t-lg">
+                <img
+                  src="/valueSection/respect.png"
+                  alt="Respect Icon"
+                  className="w-6 h-6 mr-2"
+                />
+                <h3 className="font-semibold">Respect</h3>
+              </div>
+              <div className="p-6">
+                <p className="text-[#0000009E] text-sm font-[500] ">
+                  We treat all individuals with respect and dignity. We believe
+                  every person deserves to be treated with compassion and
+                  kindness.
+                </p>
+              </div>
             </div>
-            <div className="p-6">
-              <p className="text-gray-600 text-sm">
-                We believe in practicing medicine with integrity and honesty. We
-                always put our patients' interests first.
-              </p>
+
+            {/* Top-middle Card - Excellence */}
+            <div className="w-full max-w-xs bg-[#F2F2F2] font-poppins h-[180px] rounded-lg shadow-md text-left mt-[-20px]">
+              <div className="p-2 bg-[#59A0F46B] text-[#081D54] flex items-center justify-center text-center rounded-t-lg">
+                <img
+                  src="/valueSection/respect.png"
+                  alt="Excellence Icon"
+                  className="w-6 h-6 mr-2"
+                />
+                <h3 className="font-semibold">Excellence</h3>
+              </div>
+              <div className="p-4">
+                <p className="text-[#0000009E] text-sm font-[500]">
+                  We are committed to providing excellent care and services to
+                  our patients.
+                </p>
+              </div>
+            </div>
+
+            {/* Top-right Card - Teamwork */}
+            <div className="w-full max-w-xs bg-[#F2F2F2F2] font-poppins rounded-lg shadow-md text-left mt-10">
+              <div className="p-2 bg-[#59A0F46B] text-[#081D54] flex items-center justify-center text-center rounded-t-lg">
+                <img
+                  src="/valueSection/teamwork.png"
+                  alt="Teamwork Icon"
+                  className="w-6 h-6 mr-2"
+                />
+                <h3 className="font-semibold">Teamwork</h3>
+              </div>
+              <div className="p-6">
+                <p className="text-[#0000009E] text-sm font-[500]">
+                  We believe in working collaboratively with our team members
+                  and other healthcare providers to provide effective care to
+                  our patients.
+                </p>
+              </div>
+            </div>
+
+            {/* Bottom Row */}
+            {/* Bottom-left Card - Compassion */}
+            <div className="w-full max-w-xs bg-[#F2F2F2F2] font-poppins rounded-lg shadow-md text-left transform sm:translate-y-8 sm:mr-[-200px] md:translate-y-8 md:mr-[-200px]">
+              <div className="p-2 bg-[#59A0F46B] font-poppins text-[#081D54] flex items-center justify-center text-center rounded-t-lg">
+                <img
+                  src="/valueSection/compassion.png"
+                  alt="Compassion Icon"
+                  className="w-6 h-6 mr-2"
+                />
+                <h3 className="font-semibold">Compassion</h3>
+              </div>
+              <div className="p-6">
+                <p className="text-[#0000009E] text-sm font-[500]">
+                  We strive to create a welcoming and supportive environment
+                  that puts our patients at ease.
+                </p>
+              </div>
+            </div>
+
+            {/* Center Shield */}
+            <div
+              className="relative flex justify-center items-center mt-[-60px] "
+              style={{ width: "150px", height: "150px" }}
+            >
+              <div
+                style={{
+                  backgroundImage: "url('/valueSection/health.png')",
+                  backgroundSize: "contain",
+                  backgroundPosition: "center",
+                  backgroundRepeat: "no-repeat",
+                }}
+                className="flex justify-center items-center w-full h-full"
+              ></div>
+            </div>
+
+            {/* Bottom-right Card - Integrity */}
+            <div className="w-full max-w-xs bg-[#F2F2F2F2] font-poppins rounded-lg shadow-md text-left transform sm:translate-y-8 sm:ml-[-200px] md:translate-y-8 md:ml-[-200px]">
+              <div className="p-2 bg-[#59A0F46B] font-poppins text-[#081D54] flex items-center justify-center text-center rounded-t-lg">
+                <img
+                  src="/valueSection/integrity.png"
+                  alt="Integrity Icon"
+                  className="w-6 h-6 mr-2"
+                />
+                <h3 className="font-semibold">Integrity</h3>
+              </div>
+              <div className="p-6">
+                <p className="text-[#0000009E] text-sm font-[500]">
+                  We believe in practicing medicine with integrity and honesty.
+                  We always put our patients' interests first.
+                </p>
+              </div>
             </div>
           </div>
         </div>
@@ -152,9 +153,9 @@ const Home = () => {
 
       {/* departments */}
 
-      <div className="relative text-center py-10">
+      <div className="relative bg-[#F2F2F2] text-center py-6 mt-4">
         {/* Background Image Section */}
-        <div className="mx-3 rounded-lg absolute inset-0 h-[280px] bg-[url('/landing/bg-2.png')] bg-cover bg-center" />
+        <div className="mx-3 mt-6 rounded-lg absolute inset-0 h-[280px] bg-[url('/landing/bg-2.png')] bg-cover bg-center" />
 
         {/* Title */}
         <h2 className="relative text-[#F2F2F2] text-[42px] sm:text-[40px] md:text-[48px] lg:text-[52px] font-poppins font-semibold mb-16 z-10">
@@ -192,9 +193,9 @@ const Home = () => {
       </div>
 
       {/* Doctor team */}
-      <div className="relative text-center py-10 mt-6">
+      <div className="relative bg-[#F2F2F2] text-center py-10 mt-6">
         {/* Background Image Section */}
-        <div className="mx-3 rounded-lg absolute inset-0 h-[280px] bg-[url('/landing/bg-3.png')] bg-cover bg-center" />
+        <div className="mx-3 mt-6 rounded-lg absolute inset-0 h-[280px] bg-[url('/landing/bg-3.png')] bg-cover bg-center" />
 
         {/* Title */}
         <h2 className="relative text-[#F2F2F2] font-poppins text-[40px] font-semibold mb-16 z-10 h-auto">
@@ -202,7 +203,7 @@ const Home = () => {
         </h2>
 
         {/* Responsive Grid layout */}
-        <div className="relative z-10 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 px-10 lg:px-20 xl:px-32 mt-24">
+        <div className="relative z-10 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 px-10 lg:px-20 xl:px-32 mt-24">
           {/* Card items */}
           {[...Array(3)].map((_, index) => (
             <div
@@ -233,22 +234,24 @@ const Home = () => {
         </div>
       </div>
 
-      <div className="py-10 bg-[url('/landing/bg-4.png')] bg-cover bg-center min-h-[560px] flex items-center">
-        <div className="max-w-3xl px-10 md:pt-28 pt-20">
-          <h1 className="text-[#F2F2F2] font-poppins font-[600] text-[30px] md:text-[60px]">
-            Don’t Let Your Health Take a Backseat!
-          </h1>
-          <p className="text-[#0D2D81E8] font-poppins font-[500] text-[18px] md:text-[24px]">
-            Schedule an appointment with one of our experienced medical
-            professional today!
-          </p>
-          <button className="bg-[#6173ED] px-6 font-poppins text-white rounded-lg py-2 mt-10">
-            Book Now{" "}
-          </button>
+      <div className="bg-[#F2F2F2] mt-4">
+        <div className="py-10 bg-[url('/landing/bg-4.png')] bg-cover bg-center min-h-[585px] flex items-center">
+          <div className="max-w-3xl px-10 md:pt-28 pt-20">
+            <h1 className="text-[#F2F2F2] font-poppins font-[600] text-[30px] md:text-[60px]">
+              Don't Let Your Health Take a Backseat!
+            </h1>
+            <p className="text-[#0D2D81E8] font-poppins font-[500] text-[18px] md:text-[24px]">
+              Schedule an appointment with one of our experienced medical
+              professional today!
+            </p>
+            <button className="bg-[#6173ED] px-6 font-poppins text-white rounded-lg py-2 mt-10">
+              Book Now &gt;
+            </button>
+          </div>
         </div>
       </div>
 
-      <div className="flex flex-col md:flex-row items-center justify-center gap-10 p-6 md:p-10 rounded-lg mx-auto mt-10 max-w-full md:max-w-6xl">
+      <div className="flex bg-[#F2F2F2] flex-col md:flex-row items-center justify-center gap-10 p-6 md:p-10 rounded-lg mx-auto mt-4 mb-4">
         {/* Left Side - Form */}
         <div className="w-full md:w-1/2 space-y-6">
           <h1 className="font-poppins text-[#002B9A]">

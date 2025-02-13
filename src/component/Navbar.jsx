@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link, useLocation } from "react-router-dom";
 import {
   FaFacebookF,
   FaYoutube,
@@ -8,24 +9,28 @@ import {
   FaTimes,
   FaSearch,
 } from "react-icons/fa";
-import { Link } from "react-router-dom";
+
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
+  const location = useLocation(); // Get the current route
 
   const toggleMenu = () => {
     setMenuOpen(!menuOpen);
   };
+
+  // Function to check if the current route matches the menu item
+  const isActive = (path) => location.pathname === path;
+
   return (
-    <div>
+    <div className="fixed top-0 left-0 w-full z-50">
       {/* Header Section */}
       <header className="bg-white py-4 h-auto shadow-md">
-        <div className=" mx-auto px-4 flex flex-col md:flex-row justify-between items-center">
+        <div className="max-w-[1300px] mx-auto flex flex-col md:flex-row justify-between items-center">
           {/* Logo Section */}
-          <div className="text-3xl font-bold text-blue-900">
+          <h2 className="text-3xl font-[400] text-[#1F2B6C] font-yeseva">
             <span>MED</span>
-            <span className="text-blue-500">DICAL</span>
-          </div>
-
+            <span className="text-[#159EEC]">DICAL</span>
+          </h2>
           {/* Info Section */}
           <div className="mt-4 md:mt-0 flex flex-col md:flex-row md:space-x-8 text-sm text-gray-700">
             {/* Emergency */}
@@ -35,9 +40,9 @@ const Navbar = () => {
                 alt="Emergency Icon"
                 className="w-8 h-8"
               />
-              <div>
-                <p className="font-semibold">EMERGENCY</p>
-                <p className="text-blue-500">(237) 681-812-255</p>
+              <div className="text-[14px] font-[500] font-poppins">
+                <p className=" text-[#1F2B6C]">EMERGENCY</p>
+                <p className="text-[#159EEC]">(237) 681-812-255</p>
               </div>
             </div>
 
@@ -48,9 +53,9 @@ const Navbar = () => {
                 alt="Work Hour Icon"
                 className="w-8 h-8"
               />
-              <div>
-                <p className="font-semibold">WORK HOUR</p>
-                <p className="text-blue-500">09:00 - 20:00 Everyday</p>
+              <div className="text-[14px] font-[500] font-poppins">
+                <p className=" text-[#1F2B6C]">WORK HOUR</p>
+                <p className="text-[#159EEC]">09:00 - 20:00 Everyday</p>
               </div>
             </div>
 
@@ -61,52 +66,65 @@ const Navbar = () => {
                 alt="Location Icon"
                 className="w-8 h-8"
               />
-              <div>
-                <p className="font-semibold">LOCATION</p>
-                <p className="text-blue-500">110025-New Delhi, Noida</p>
+              <div className="text-[14px] font-[500] font-poppins">
+                <p className=" text-[#1F2B6C]">LOCATION</p>
+                <p className="text-[#159EEC]">110025-New Delhi, Noida</p>
               </div>
             </div>
-          </div>
+        </div>
         </div>
       </header>
 
-      <nav className="bg-[#053F94] p-4">
-        <div className="container mx-auto flex justify-between items-center">
+      {/* Navigation */}
+      <nav className="bg-[#002B9A] p-4 ">
+        <div className="max-w-[1300px] mx-auto flex justify-between items-center">
           {/* Menu (Desktop) */}
-          <div className="hidden lg:flex items-center space-x-8">
+          <div className="hidden lg:flex items-center space-x-8 text-[18px] font-[600] font-poppins">
             <Link
               to="/"
-              className="text-white font-semibold hover:text-[#58B7FF]"
+              className={`${
+                isActive("/") ? "text-white" : "text-[#BFD2F8]"
+              } font-semibold hover:text-white`}
             >
               HOME
             </Link>
             <Link
-              to="about-us"
-              className="text-white font-semibold hover:text-[#58B7FF]"
+              to="/about-us"
+              className={`${
+                isActive("/about-us") ? "text-white" : "text-[#BFD2F8]"
+              } font-semibold hover:text-white`}
             >
               ABOUT US
             </Link>
             <Link
-              to="our-service"
-              className="text-white font-semibold hover:text-[#58B7FF]"
+              to="/our-service"
+              className={`${
+                isActive("/our-service") ? "text-white" : "text-[#BFD2F8]"
+              } font-semibold hover:text-white`}
             >
               SERVICES
             </Link>
             <Link
-              to="our-doctors"
-              className="text-white font-semibold hover:text-[#58B7FF]"
+              to="/our-doctors"
+              className={`${
+                isActive("/our-doctors") ? "text-white" : "text-[#BFD2F8]"
+              } font-semibold hover:text-white`}
             >
               DOCTORS
             </Link>
             <Link
-              to={"/our-news"}
-              className="text-white font-semibold hover:text-[#58B7FF]"
+              to="/our-news"
+              className={`${
+                isActive("/our-news") ? "text-white" : "text-[#BFD2F8]"
+              } font-semibold hover:text-white`}
             >
               NEWS
             </Link>
             <Link
               to="/our-contact"
-              className="text-white font-semibold hover:text-[#58B7FF]"
+              className={`${
+                isActive("/our-contact") ? "text-white" : "text-[#BFD2F8]"
+              } font-semibold hover:text-white`}
             >
               CONTACT
             </Link>
@@ -114,19 +132,16 @@ const Navbar = () => {
 
           {/* Right Section */}
           <div className="hidden lg:flex items-center space-x-4">
-            {/* Search Icon */}
             <FaSearch className="text-white text-lg cursor-pointer" />
-
-            {/* Appointment Button */}
             <Link
               to="/our-appointment"
-              className="bg-[#A8C8FF] text-blue-900 font-semibold px-4 py-2 rounded-full hover:bg-[#58B7FF] hover:text-white"
+              className="bg-[#BFD2F8] w-[177px] h-[50px] text-[#1F2B6C] text-[14px] font-[500] font-poppins rounded-full flex items-center justify-center"
             >
               Appointment
             </Link>
           </div>
 
-          {/* Hamburger Menu (Mobile) */}
+          {/* Mobile Menu Toggle Button */}
           <div className="lg:hidden flex justify-end w-full">
             <button
               className="text-white text-2xl focus:outline-none"
@@ -149,50 +164,60 @@ const Navbar = () => {
             <div className="flex flex-col space-y-4 text-center h-full justify-center">
               <Link
                 to="/"
-                className="text-white font-semibold hover:text-[#58B7FF]"
+                className={`${
+                  isActive("/") ? "text-white" : "text-[#BFD2F8]"
+                } font-semibold hover:text-white`}
                 onClick={toggleMenu}
               >
                 HOME
               </Link>
               <Link
-                to="about-us"
-                className="text-white font-semibold hover:text-[#58B7FF]"
+                to="/about-us"
+                className={`${
+                  isActive("/about-us") ? "text-white" : "text-[#BFD2F8]"
+                } font-semibold hover:text-white`}
                 onClick={toggleMenu}
               >
                 ABOUT US
               </Link>
               <Link
-                to="our-service"
-                className="text-white font-semibold hover:text-[#58B7FF]"
+                to="/our-service"
+                className={`${
+                  isActive("/our-service") ? "text-white" : "text-[#BFD2F8]"
+                } font-semibold hover:text-white`}
                 onClick={toggleMenu}
               >
                 SERVICES
               </Link>
               <Link
-                to="our-doctors"
-                className="text-white font-semibold hover:text-[#58B7FF]"
+                to="/our-doctors"
+                className={`${
+                  isActive("/our-doctors") ? "text-white" : "text-[#BFD2F8]"
+                } font-semibold hover:text-white`}
                 onClick={toggleMenu}
               >
                 DOCTORS
               </Link>
               <Link
-                to={"/our-news"}
-                className="text-white font-semibold hover:text-[#58B7FF]"
+                to="/our-news"
+                className={`${
+                  isActive("/our-news") ? "text-white" : "text-[#BFD2F8]"
+                } font-semibold hover:text-white`}
                 onClick={toggleMenu}
               >
                 NEWS
               </Link>
               <Link
                 to="/our-contact"
-                className="text-white font-semibold hover:text-[#58B7FF]"
+                className={`${
+                  isActive("/our-contact") ? "text-white" : "text-[#BFD2F8]"
+                } font-semibold hover:text-white`}
                 onClick={toggleMenu}
               >
                 CONTACT
               </Link>
               <div className="flex justify-center items-center space-x-4 mt-4">
-                {/* Search Icon */}
                 <FaSearch className="text-white text-lg cursor-pointer" />
-                {/* Appointment Button */}
                 <Link
                   to="/our-appointment"
                   className="bg-[#A8C8FF] text-blue-900 font-semibold px-4 py-2 rounded-full hover:bg-[#58B7FF] hover:text-white"

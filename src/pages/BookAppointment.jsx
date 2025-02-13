@@ -37,24 +37,24 @@ export default function BookAppointment() {
       title: "WORKING HOURS",
       content: (
         <>
-          Mon-Sat 09:00–20:00 <br /> Sunday Emergency only
+          Mon-Sat 09:00-20:00 <br /> Sunday Emergency only
         </>
       ),
       bgColor: "bg-blue-100",
     },
   ];
   return (
-    <div>
+    <div className="pt-[140px]">
       {/* banner */}
       <div className=" relative">
         {/* Background Image */}
-        <img src="/about/bg1.png" alt="bg1" className="w-full h-auto" />
+        <img src="/appointment.png" alt="bg1" className="w-full h-auto" />
 
         {/* Text Overlay */}
         <div className="absolute inset-0 flex items-center left-0 px-6">
-          <div className="text-left text-[#1F2B6C]">
-            <p className="md:text-[20px]">Home / Contact</p>
-            <h2 className="text-3xl md:text-[55px] font-[700]">Our Contact</h2>
+        <div className="text-left font-poppins text-[#1F2B6C]">
+        <p className="md:text-[20px] mb-4">Home / Contact</p>
+            <h2 className="text-3xl md:text-[55px]  font-[700]">Our Contact</h2>
           </div>
         </div>
       </div>
@@ -65,12 +65,12 @@ export default function BookAppointment() {
       >
         <div className=" rounded-lg max-w-7xl w-full grid grid-cols-1 lg:grid-cols-2 overflow-hidden">
           {/* Left Section */}
-          <div className="lg:p-4">
+          <div className="lg:p-4 font-poppins">
             {/* Heading */}
-            <h1 className="text-3xl lg:text-4xl font-bold text-blue-900 mb-4">
+            <h1 className="text-[32px]  font-[600] text-[#002B9A] mb-4">
               Book an Appointment
             </h1>
-            <p className="text-gray-600 text-sm lg:text-base mb-8">
+            <p className="text-[#000000] font-[400] text-sm lg:text-base mb-8">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque
               placerat scelerisque tortor ornare ornare. Convallis felis vitae
               tortor augue. Velit nascetur proin massa in. Consequat faucibus
@@ -78,117 +78,102 @@ export default function BookAppointment() {
             </p>
 
             {/* Form */}
-            <form className="space-y-4 bg-[#1F2B6C] p-4">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <div>
-                  <label className="block text-sm font-medium text-white mb-1">
-                    Name
-                  </label>
-                  <input
-                    type="text"
-                    className="w-full border border-gray-300 bg-[#1F2B6C] rounded px-3 py-2 text-white"
-                  />
+            <div className="bg-[#1F2B6C] text-[#FCFEFE] rounded-2xl shadow-lg w-full max-w-lg">
+              <form className="space-y-0">
+                {/* Name & Gender */}
+                <div className="grid grid-cols-2 border-b border-white">
+                  <div className="p-3">
+                    <input
+                      type="text"
+                      className="w-full mt-1 p-2 bg-[#1F2B6C] outline-none text-white placeholder-white"
+                      placeholder="Name"
+                    />
+                  </div>
+                  <div className="p-3  border-white">
+                    <select className="w-full mt-1 p-2 bg-[#1F2B6C] outline-none text-white">
+                      <option>Gender</option>
+                      <option>Female</option>
+                      <option>Other</option>
+                    </select>
+                  </div>
                 </div>
-                <div>
-                  <label className="block text-sm font-medium text-white mb-1">
-                    Gender
-                  </label>
-                  <select className="w-full border bg-[#1F2B6C] border-gray-300 rounded px-3 py-2 text-white ">
-                    <option>Male</option>
-                    <option>Female</option>
-                    <option>Other</option>
-                  </select>
-                </div>
-              </div>
 
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <div>
-                  <label className="block text-sm font-medium text-white mb-1">
-                    Email
-                  </label>
-                  <input
-                    type="email"
-                    className="w-full border bg-[#1F2B6C] border-gray-300 rounded px-3 py-2 text-white "
-                  />
+                {/* Email & Phone */}
+                <div className="grid grid-cols-2 border-b border-white">
+                  <div className="p-3">
+                    <input
+                      type="email"
+                      className="w-full mt-1 p-2 bg-[#1F2B6C] outline-none text-white placeholder-white"
+                      placeholder="Email"
+                    />
+                  </div>
+                  <div className="p-3  border-white">
+                    <input
+                      type="text"
+                      className="w-full mt-1 p-2 bg-[#1F2B6C] outline-none text-white placeholder-white"
+                      placeholder="Phone"
+                    />
+                  </div>
                 </div>
-                <div>
-                  <label className="block text-sm font-medium text-white mb-1">
-                    Phone
-                  </label>
-                  <input
-                    type="text"
-                    className="w-full border bg-[#1F2B6C] border-gray-300 rounded px-3 py-2 text-white "
-                  />
-                </div>
-              </div>
 
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <div>
-                  <label className="block text-sm font-medium text-white mb-1">
-                    Date
-                  </label>
-                  <input
-                    type="date"
-                    className="w-full border bg-[#1F2B6C] border-gray-300 rounded px-3 py-2 text-white"
-                  />
+                {/* Date & Time */}
+                <div className="grid grid-cols-2 border-b border-white">
+                  <div className="p-3">
+                    <select className="w-full mt-1 p-2 bg-[#1F2B6C] outline-none text-white">
+                      <option>Date</option>
+                      <option>12/02/2025</option>
+                    </select>
+                  </div>
+                  <div className="p-3  border-white">
+                    <select className="w-full mt-1 p-2 bg-[#1F2B6C] outline-none text-white">
+                      <option>Time</option>
+                      <option>12:34 PM</option>
+                    </select>
+                  </div>
                 </div>
-                <div>
-                  <label className="block text-sm font-medium text-white mb-1">
-                    Time
-                  </label>
-                  <input
-                    type="time"
-                    className="w-full border bg-[#1F2B6C] border-white rounded px-3 py-2 text-white"
-                  />
-                </div>
-              </div>
 
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <div>
-                  <label className="block text-sm font-medium text-white mb-1">
-                    Doctor
-                  </label>
-                  <select className="w-full bg-[#1F2B6C] border border-gray-300 rounded px-3 py-2 text-white">
-                    <option>Dr. John</option>
-                    <option>Dr. Smith</option>
-                    <option>Dr. Jane</option>
-                  </select>
+                {/* Doctor & Department */}
+                <div className="grid grid-cols-2 border-b border-white">
+                  <div className="p-3">
+                    <select className="w-full mt-1 p-2 bg-[#1F2B6C] outline-none text-white">
+                      <option>Doctor</option>
+                      <option>Dr. Smith</option>
+                      <option>Dr. Jane</option>
+                    </select>
+                  </div>
+                  <div className="p-3  border-white">
+                    <select className="w-full mt-1 p-2 bg-[#1F2B6C] outline-none text-white">
+                      <option>Cardiology</option>
+                      <option>Dermatology</option>
+                      <option>Neurology</option>
+                    </select>
+                  </div>
                 </div>
-                <div>
-                  <label className="block text-sm font-medium text-white mb-1">
-                    Department
-                  </label>
-                  <select className="w-full border bg-[#1F2B6C] border-gray-300 rounded px-3 py-2 text-white ">
-                    <option>Cardiology</option>
-                    <option>Dermatology</option>
-                    <option>Neurology</option>
-                  </select>
+
+                {/* Message Field */}
+                <div className="p-3">
+                  <textarea
+                    rows="4"
+                    className="w-full mt-1 p-2 bg-[#1F2B6C] outline-none text-white placeholder-white"
+                    placeholder="Message"
+                  ></textarea>
                 </div>
-              </div>
 
-              <div>
-                <label className="block text-sm font-medium text-white mb-1">
-                  Message
-                </label>
-                <textarea
-                  rows="4"
-                  className="w-full border bg-[#1F2B6C] border-gray-300 rounded px-3 py-2 text-gray-900 focus:outline-none focus:ring focus:ring-blue-300"
-                ></textarea>
-              </div>
-
-              <button
-                type="submit"
-                className="w-full bg-[#BFD2F8] -mt-4 text-[#1F2B6C] font-bold py-3 px-6 rounded "
-              >
-                Submit
-              </button>
-            </form>
+                {/* Submit Button */}
+                <button
+                  type="submit"
+                  className="w-full bg-[#BFD2F8] h-[50px] text-[#1F2B6C] font-bold p-2 rounded-b-md uppercase tracking-wide hover:bg-[#A5C4F0] transition duration-300"
+                >
+                  Submit
+                </button>
+              </form>
+            </div>
           </div>
 
           {/* Right Section */}
-          <div className="bg-blue-900 text-white p-8 lg:p-12 flex flex-col justify-between">
-            <div className="bg-blue-900 text-white p-6 rounded-lg">
-              <h2 className="text-2xl font-bold mb-6 text-center">
+          <div className="bg-[#1F2B6C] font-poppins text-white p-8 lg:p-12 flex flex-col justify-between">
+            <div className="bg-[#1F2B6C] text-white p-6 rounded-lg">
+              <h2 className="text-[#BFD2F8] font-[500] mb-6 text-[48px] text-center">
                 Schedule Hours
               </h2>
               <ul className="space-y-4">
@@ -201,24 +186,32 @@ export default function BookAppointment() {
                   ["Saturday", "09:00 AM - 07:00 PM"],
                   ["Sunday", "Closed"],
                 ].map(([day, time], idx) => (
-                  <li key={idx} className="flex justify-between items-center">
+                  <li
+                    key={idx}
+                    className="flex justify-between text-[#FCFEFE] items-center"
+                  >
                     <span className="flex-1">{day}</span>
                     <span className="w-10 h-px bg-white mx-4"></span>
                     <span className="flex-1 text-right">{time}</span>
                   </li>
                 ))}
               </ul>
-              <div className="mt-6 border-t border-white pt-4 text-center">
-                <p className="text-lg font-medium">Emergency</p>
-                <div className="flex items-center justify-center space-x-2">
+              <div className="mt-6 font-poppins border-t border-[#BFD2F8] pt-4 flex justify-center">
+                <div className="flex items-center space-x-4">
+                  {/* Left Side: Emergency Icon */}
                   <img
                     src="/about/emer-app.png"
                     alt="Emergency Icon"
-                    className="h-10 w-10"
+                    className="h-12 w-12"
                   />
-                  <a href="tel:+237681812255" className=" text-white">
-                    (237) 681-812-255
-                  </a>
+
+                  {/* Right Side: Texts in a Column */}
+                  <div className="flex flex-col items-center text-center">
+                    <p className="text-[#FCFEFE] font-[500] text-[24px]">
+                      Emergency
+                    </p>
+                    <p className="text-[#BFD2F8]"> (237) 681-812-XXX </p>
+                  </div>
                 </div>
               </div>
             </div>
@@ -243,35 +236,33 @@ export default function BookAppointment() {
       </div>
 
       {/*contact us  */}
-      <section className="py-16 bg-[url('/about/bg5.png')] bg-no-repeat bg-cover bg-center md:mt-5 mt-4 mb-4">
+      <section className="py-16 bg-[url('/about/bg5.png')] bg-no-repeat bg-cover bg-center mt-4">
         <div className="text-center mb-12">
-          <h2 className="text-blue-500 text-[18px] font-bold uppercase mb-2">
+          <h2 className="text-[#159EEC] text-[18px] font-[700] uppercase mb-2">
             Get in Touch
           </h2>
-          <h1 className="text-blue-900 text-4xl font-bold">Contact</h1>
+          <h1 className="text-[#002B9A] font-poppins text-4xl font-[600]">
+            Contact
+          </h1>
         </div>
 
         <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-6 px-4">
           {contactInfo.map((info, index) => (
             <div
               key={index}
-              className={`p-6 rounded-lg shadow-lg ${info.bgColor}`}
+              className="p-6 rounded-lg shadow-lg transition-all duration-300 bg-[#BFD2F8] text-[#1F2B6C] hover:bg-[#1F2B6C] hover:text-[#BFD2F8] group"
             >
-              <div className="mb-4">
-                <img src={info.icon} />
+              <div className="mb-4 flex">
+                <img
+                  src={info.icon}
+                  alt={info.title}
+                  className="w-10 h-10 transition-all duration-300 filter brightness-[0] invert-[0] group-hover:brightness-50 group-hover:invert"
+                />
               </div>
-              <h3
-                className={`text-blue-900 font-semibold text-xl mb-2 ${
-                  info.active ? " text-white" : ""
-                }`}
-              >
+              <h3 className="font-[600] text-xl mb-2 font-poppins transition-all duration-300 group-hover:text-[#BFD2F8]">
                 {info.title}
               </h3>
-              <p
-                className={` text-blue-700 text-lg ${
-                  info.active ? " text-white" : ""
-                }`}
-              >
+              <p className="text-lg font-poppins transition-all duration-300 group-hover:text-[#BFD2F8]">
                 {info.content}
               </p>
             </div>

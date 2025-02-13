@@ -77,10 +77,10 @@ export default function About() {
       title: "EMERGENCY",
       content: (
         <>
-          (237) 681-812-255 <br /> (237) 666-331-894
+          (237) 681-XXX-XXX <br /> (237) 666-XXX-XXX
         </>
       ),
-      bgColor: "bg-blue-100",
+      bgColor: "bg-[#BFD2F8]",
     },
     {
       icon: "/about/contact-icon-2.png", // Replace with actual icon component if needed
@@ -115,7 +115,7 @@ export default function About() {
   ];
 
   return (
-    <div>
+    <div className="pt-[140px]">
       {/* banner */}
       <div className=" relative">
         {/* Background Image */}
@@ -130,23 +130,23 @@ export default function About() {
         </div>
       </div>
       {/* next section */}
-      <section className="bg-[url('/about/bg5.png')] bg-no-repeat bg-cover bg-center py-16 ">
-        <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 items-center px-6">
+      <section className="bg-[url('/about/bg5.png')] bg-no-repeat bg-cover font-poppins bg-center py-16 mt-4 ">
+        <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 items-center px-6 py-4">
           {/* Image Section */}
-          <div>
+          <div className="w-[408px] h-[502px]">
             <img
               src="/about/img1.png"
               alt="Doctors smiling"
-              className="rounded-md"
+              className="rounded-md w-full h-full"
             />
           </div>
 
           {/* Text Section */}
           <div>
-            <p className="text-blue-700 uppercase text-sm font-semibold mb-2">
+            <p className="text-[#3A40DF] uppercase text-[18px] font-[700] mb-2">
               Welcome to Hospital Name
             </p>
-            <h1 className="text-blue-900 font-bold text-4xl sm:text-5xl leading-tight">
+            <h1 className="text-[#002B9A] font-[600] text-[55px] sm:text-5xl leading-tight">
               Best Care for Your <br /> Good Health
             </h1>
 
@@ -179,14 +179,14 @@ export default function About() {
             </div>
 
             {/* Description Section */}
-            <p className="text-gray-700 text-sm mt-6 leading-relaxed">
+            <p className="text-[#000000] font-[400] text-[16px] mt-6 leading-relaxed">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque
               placerat scelerisque tortor ornare ornare. Quisque placerat
               scelerisque tortor ornare ornare Convallis felis vitae tortor
               augue. Velit nascetur proin massa in. Consequat faucibus porttitor
               enim et.
             </p>
-            <p className="text-gray-700 text-sm mt-4 leading-relaxed">
+            <p className="text-[#000000] font-[400] text-[16px] mt-6 leading-relaxed">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque
               placerat scelerisque. Convallis felis vitae tortor augue. Velit
               nascetur proin massa in.
@@ -196,13 +196,13 @@ export default function About() {
       </section>
       {/* testimonial slider */}
       <div
-        className="relative bg-cover bg-center bg-no-repeat"
+        className="relative bg-cover bg-center bg-no-repeat mt-4"
         style={{
           backgroundImage: 'url("/about/bg2.png")',
         }}
       >
         <div className="absolute inset-0 " />
-        <div className="relative z-10 container mx-auto px-4 h-screen flex items-center justify-center">
+        <div className="relative z-10 container mx-auto px-4 h-[464px] flex items-center justify-center">
           <div className="max-w-4xl w-full">
             <Slider {...settings}>
               {testimonials.map((testimonial) => (
@@ -233,33 +233,29 @@ export default function About() {
       {/*contact us  */}
       <section className="py-16 bg-[url('/about/bg5.png')] bg-no-repeat bg-cover bg-center md:mt-5 mt-64">
         <div className="text-center mb-12">
-          <h2 className="text-blue-500 text-[18px] font-bold uppercase mb-2">
+          <h2 className="text-[#159EEC] text-[18px] font-[700] uppercase mb-2">
             Get in Touch
           </h2>
-          <h1 className="text-blue-900 text-4xl font-bold">Contact</h1>
+          <h1 className="text-[#002B9A] font-poppins text-4xl font-[600]">Contact</h1>
         </div>
 
         <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-6 px-4">
           {contactInfo.map((info, index) => (
             <div
               key={index}
-              className={`p-6 rounded-lg shadow-lg ${info.bgColor}`}
+              className="p-6 rounded-lg shadow-lg transition-all duration-300 bg-[#BFD2F8] text-[#1F2B6C] hover:bg-[#1F2B6C] hover:text-[#BFD2F8] group"
             >
-              <div className="mb-4">
-                <img src={info.icon} />
+              <div className="mb-4 flex">
+                <img
+                  src={info.icon}
+                  alt={info.title}
+                  className="w-10 h-10 transition-all duration-300 filter brightness-[0] invert-[0] group-hover:brightness-50 group-hover:invert"
+                />
               </div>
-              <h3
-                className={`text-blue-900 font-semibold text-xl mb-2 ${
-                  info.active ? " text-white" : ""
-                }`}
-              >
+              <h3 className="font-[600] text-xl mb-2 font-poppins transition-all duration-300 group-hover:text-[#BFD2F8]">
                 {info.title}
               </h3>
-              <p
-                className={` text-blue-700 text-lg ${
-                  info.active ? " text-white" : ""
-                }`}
-              >
+              <p className="text-lg font-poppins transition-all duration-300 group-hover:text-[#BFD2F8]">
                 {info.content}
               </p>
             </div>
@@ -300,17 +296,19 @@ const DoctorsSlider = () => {
   };
 
   return (
-    <div className="py-16 bg-[#F2F2F2]">
-      <div className="text-center mb-12">
-        <h2 className="text-[#159EEC] text-[18px] font-[700] mb-2">
+    <div className="py-10 bg-[#F2F2F2] mt-4 h-[816px]">
+      <div className="text-center mb-">
+        <h2 className="text-[#159EEC] font-poppins text-[18px] font-[700] mb-2">
           TRUSTED CARE
         </h2>
-        <h1 className="text-4xl font-bold text-blue-900">Our Doctors</h1>
+        <h1 className="text-[55px] font-[600] font-poppins text-[#002B9A]">
+          Our Doctors
+        </h1>
       </div>
       <div className="relative pb-36">
-        <img src="/about/bg3.png" alt="bg3" className="w-full h-auto" />
+        <img src="/about/bg3.png" alt="bg3" className="w-full h-[450px]" />
         {/* Adjust the max-w container */}
-        <div className="max-w-7xl mx-auto absolute top-0 left-0 right-0 ">
+        <div className="max-w-6xl mx-auto absolute top-6 left-0 right-0 ">
           <Slider {...settings}>
             {doctors.map((doctor) => (
               <DoctorCard key={doctor.id} doctor={doctor} />
@@ -348,26 +346,26 @@ const SocialLinks = ({ links }) => {
 };
 const DoctorCard = ({ doctor }) => {
   return (
-    <div className="bg-white rounded-lg overflow-hidden shadow-lg mx-4">
+    <div className="bg-white rounded-lg h-auto w-[320px] overflow-hidden shadow-lg mx-4">
       <div>
         <img
           src={doctor.image}
           alt={doctor.name}
-          className="w-full h-full object-cover"
+          className="w-[350px] h-[350px] object-cover"
         />
       </div>
-      <div className="p-6 bg-[#BFD2F8]">
+      <div className="p-2 bg-[#BFD2F8]">
         <h3 className="text-xl font-semibold text-center text-[#1F2B6C] mb-2">
           {doctor.name}
         </h3>
-        <p className="text-blue-900 font-medium text-center mb-4">
+        <p className="text-blue-900 font-medium text-center mb-2">
           {doctor.specialty}
         </p>
         <SocialLinks links={doctor.socialLinks} />
-        <button className="w-full mt-6 bg-blue-900 text-white py-3 rounded-md hover:bg-blue-800 transition-colors">
-          View Profile
-        </button>
       </div>
+      <button className="w-full bg-[#002B9A] text-white py-3 hover:bg-blue-800 transition-colors">
+        View Profile
+      </button>
     </div>
   );
 };
@@ -444,10 +442,10 @@ const NewsSlider = () => {
   return (
     <div className="mt-64 md:mt-6 py-16 bg-[#F2F2F2] md:block hidden">
       <div className="text-center mb-12">
-        <h2 className="text-[#159EEC] text-[18px] font-[700] mb-2 uppercase">
+        <h2 className="text-[#159EEC] font-poppins text-[18px] font-[700] mb-2 uppercase">
           Better information, Better health
         </h2>
-        <h1 className="text-4xl font-bold text-blue-900">News </h1>
+        <h1 className="text-4xl font-[600] font-poppins text-[#002B9A]">News </h1>
       </div>
       <div className="relative pb-36">
         <img src="/about/bg4.png" alt="bg3" className="w-full h-auto" />

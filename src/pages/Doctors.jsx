@@ -76,7 +76,7 @@ export default function Doctors() {
       title: "EMERGENCY",
       content: (
         <>
-          (237) 681-812-255 <br /> (237) 666-331-894
+          (237) 681-812-XXX <br /> (237) 666-331-XXX
         </>
       ),
       bgColor: "bg-blue-100",
@@ -113,7 +113,7 @@ export default function Doctors() {
     },
   ];
   return (
-    <div>
+    <div className="pt-[140px] ">
       {/* banner */}
       <div className=" relative">
         {/* Background Image */}
@@ -121,19 +121,20 @@ export default function Doctors() {
 
         {/* Text Overlay */}
         <div className="absolute inset-0 flex items-center left-0 px-6">
-          <div className="text-left text-[#1F2B6C]">
-            <p className="md:text-[20px]">Home / Doctors</p>
-            <h2 className="text-3xl md:text-[55px] font-[700]">Our Doctors</h2>
+        <div className="text-left font-poppins text-[#1F2B6C]">
+        <p className="md:text-[20px]">Home / Doctors</p>
+            <h2 className="text-[55px] font-[700]">Our Doctors</h2>
           </div>
         </div>
       </div>
 
       {/* doctor slider */}
       <DoctorsSlider />
+      <DoctorsSlider />
 
       {/* testimonial slider */}
       <div
-        className="relative bg-cover bg-center bg-no-repeat"
+        className="relative bg-cover bg-center bg-no-repeat py-10 mt-6"
         style={{
           backgroundImage: 'url("/about/bg2.png")',
         }}
@@ -165,35 +166,31 @@ export default function Doctors() {
       <NewsSlider />
 
       {/*contact us  */}
-      <section className="py-16 bg-[url('/about/bg5.png')] bg-no-repeat bg-cover bg-center md:mt-5">
+      <section className="py-16 bg-[url('/about/bg5.png')] bg-no-repeat bg-cover bg-center mt-4">
         <div className="text-center mb-12">
-          <h2 className="text-blue-500 text-[18px] font-bold uppercase mb-2">
+          <h2 className="text-[#159EEC] text-[18px] font-[700] uppercase mb-2">
             Get in Touch
           </h2>
-          <h1 className="text-blue-900 text-4xl font-bold">Contact</h1>
+          <h1 className="text-[#002B9A] font-poppins text-4xl font-[600]">Contact</h1>
         </div>
 
         <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-6 px-4">
           {contactInfo.map((info, index) => (
             <div
               key={index}
-              className={`p-6 rounded-lg shadow-lg ${info.bgColor}`}
+              className="p-6 rounded-lg shadow-lg transition-all duration-300 bg-[#BFD2F8] text-[#1F2B6C] hover:bg-[#1F2B6C] hover:text-[#BFD2F8] group"
             >
-              <div className="mb-4">
-                <img src={info.icon} />
+              <div className="mb-4 flex">
+                <img
+                  src={info.icon}
+                  alt={info.title}
+                  className="w-10 h-10 transition-all duration-300 filter brightness-[0] invert-[0] group-hover:brightness-50 group-hover:invert"
+                />
               </div>
-              <h3
-                className={`text-blue-900 font-semibold text-xl mb-2 ${
-                  info.active ? " text-white" : ""
-                }`}
-              >
+              <h3 className="font-[600] text-xl mb-2 font-poppins transition-all duration-300 group-hover:text-[#BFD2F8]">
                 {info.title}
               </h3>
-              <p
-                className={` text-blue-700 text-lg ${
-                  info.active ? " text-white" : ""
-                }`}
-              >
+              <p className="text-lg font-poppins transition-all duration-300 group-hover:text-[#BFD2F8]">
                 {info.content}
               </p>
             </div>
@@ -233,11 +230,11 @@ const DoctorsSlider = () => {
   };
 
   return (
-    <div className="py-16 bg-[#F2F2F2] mb-72 md:mb-0">
+    <div className="py-10 bg-[#F2F2F2] mb-10 md:mb-0 mt-4">
       <div className="relative pb-36">
         <img src="/about/bg3.png" alt="bg3" className="w-full h-auto" />
         {/* Adjust the max-w container */}
-        <div className="max-w-7xl mx-auto absolute top-0 left-0 right-0 ">
+        <div className="max-w-6xl mx-auto absolute top-0 left-0 right-0 ">
           <Slider {...settings}>
             {doctors.map((doctor) => (
               <DoctorCard key={doctor.id} doctor={doctor} />
@@ -275,26 +272,27 @@ const SocialLinks = ({ links }) => {
 };
 const DoctorCard = ({ doctor }) => {
   return (
-    <div className="bg-white rounded-lg overflow-hidden shadow-lg mx-4 mt-4">
+    <div className="bg-white font-poppins rounded-lg overflow-hidden shadow-lg mx-4 mt-4">
       <div>
         <img
           src={doctor.image}
           alt={doctor.name}
-          className="w-full h-full object-cover"
+          className="w-full h-[480px] object-cover"
         />
       </div>
-      <div className="p-6 bg-[#BFD2F8]">
-        <h3 className="text-xl font-semibold text-center text-[#1F2B6C] mb-2">
+      <div className="p-6  bg-[#BFD2F8]">
+        <h3 className="text-[18px] font-[400] text-center text-[#1F2B6C]">
           {doctor.name}
         </h3>
-        <p className="text-blue-900 font-medium text-center mb-4">
+        <p className="text-[#1F2B6C] font-[700] text-center mb-4">
           {doctor.specialty}
         </p>
         <SocialLinks links={doctor.socialLinks} />
-        <button className="w-full mt-6 bg-blue-900 text-white py-3 rounded-md hover:bg-blue-800 transition-colors">
+        
+      </div>
+      <button className="w-full bg-[#002B9A] text-white py-3  hover:bg-blue-800 transition-colors">
           View Profile
         </button>
-      </div>
     </div>
   );
 };
